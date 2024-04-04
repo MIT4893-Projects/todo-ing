@@ -13,7 +13,7 @@ export const noteCardHeaderPropTypes = {
 
 export const noteCardBodyPropTypes = {
   ...basePropTypes,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string,
 };
 
 export const noteCardPropTypes = {

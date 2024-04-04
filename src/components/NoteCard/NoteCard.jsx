@@ -7,7 +7,13 @@ import "./NoteCard.css";
 
 NoteCard.propTypes = noteCardPropTypes;
 
-export default function NoteCard({ image, header, content, className, style }) {
+export default function NoteCard({
+  header,
+  image = "",
+  content = "",
+  className = "",
+  style = {},
+}) {
   return (
     <div className="col">
       <div className={`card rounded-3 ${className}`} style={style}>

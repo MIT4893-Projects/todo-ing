@@ -8,7 +8,7 @@ import NoteContainer from "../../components/Containers/NoteContainer";
 
 HomePage.propTypes = homePagePropTypes;
 
-export default function HomePage({ className, style }) {
+export default function HomePage({ className = "", style = {} }) {
   return (
     <MainContainer className={`p-0 vh-100 ${className}`} style={style}>
       <NavBar />
