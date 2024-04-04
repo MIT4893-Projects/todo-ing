@@ -1,4 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 @import "bootstrap/scss/functions";
+
+$font-family-sans-serif:
+  "Inter",
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji" !default;
+
 @import "bootstrap/scss/variables";
 
 $theme-colors: map-merge(
