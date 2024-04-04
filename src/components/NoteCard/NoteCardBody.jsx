@@ -3,9 +3,9 @@ import { noteCardBodyPropTypes } from "./propTypes";
 NoteCardBody.propTypes = noteCardBodyPropTypes;
 
 export default function NoteCardBody({ content, className, style }) {
-  return (
-    <p className={className} style={style}>
+  return content ? (
+    <p className={`mb-0 mt-2 ${className}`} style={style}>
       {content}
     </p>
-  );
+  ) : null;
 }

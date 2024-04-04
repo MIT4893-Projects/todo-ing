@@ -4,8 +4,8 @@ NoteCardHeader.propTypes = noteCardHeaderPropTypes;
 
 export default function NoteCardHeader({ header, className, style }) {
   return (
-    <div className={className} style={style}>
+    <h3 className={`h3 card-title m-0 ${className}`} style={style}>
       {header}
-    </div>
+    </h3>
   );
 }
