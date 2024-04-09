@@ -8,16 +8,16 @@ import { noteContainerPropTypes } from "./propTypes";
 
 NoteContainer.propTypes = noteContainerPropTypes;
 
-// TODO: Implement NoteContainer
-// - set setlectedNote to clicked note card.
+// TODO: Layout NoteContainer
+// - Implement NoteEditor layout on the right side.
 export default function NoteContainer() {
   const [notes, setNotes] = useState(noteUtils.getNotes());
   const [selectedNote, setSelectedNote] = useState(null);
 
   return (
     <div className="flex-fill p-2">
-      <div className="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-2">
-        <NoteCardContainer notes={notes} />
+      <div>
+        <NoteCardContainer notes={notes} setSelectedNote={setSelectedNote} />
         <NoteEditor />
       </div>
     </div>

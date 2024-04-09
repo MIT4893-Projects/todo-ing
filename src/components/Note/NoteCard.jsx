@@ -8,15 +8,15 @@ import "./NoteCard.css";
 NoteCard.propTypes = noteCardPropTypes;
 
 export default function NoteCard({
+  id,
   header,
   image = "",
   content = "",
-  className = "",
-  style = {},
+  setSelectedNote,
 }) {
   return (
-    <div className="col">
-      <div className={`card rounded-3 ${className}`} style={style}>
+    <div className="col" onClick={() => setSelectedNote(id)}>
+      <div className="card rounded-3">
         <NoteCardImg image={image} />
         <div className="p-4">
           <NoteCardHeader header={header} />

@@ -16,11 +16,17 @@ export const noteCardBodyPropTypes = {
   content: PropTypes.string,
 };
 
-export const noteCardPropTypes = {
-  ...basePropTypes,
+export const notePropTypes = {
+  id: PropTypes.number.isRequired,
   ...noteCardImgPropTypes,
   ...noteCardHeaderPropTypes,
   ...noteCardBodyPropTypes,
+};
+
+export const noteCardPropTypes = {
+  ...basePropTypes,
+  ...notePropTypes,
+  setSelectedNote: PropTypes.func.isRequired,
 };
 
 export const noteEditorPropTypes = {
@@ -33,7 +39,5 @@ export const noteContainerPropTypes = {
 
 export const noteCardContainerPropTypes = {
   ...noteContainerPropTypes,
-  notes: PropTypes.arrayOf(
-    PropTypes.shape({ ...noteCardPropTypes, id: PropTypes.number.isRequired }),
-  ),
+  notes: PropTypes.arrayOf(PropTypes.shape({ ...notePropTypes })),
 };
