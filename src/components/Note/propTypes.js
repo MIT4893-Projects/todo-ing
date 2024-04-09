@@ -1,5 +1,4 @@
 import { basePropTypes } from "@types/basePropTypes";
-import { containerPropTypes } from "@components/Containers/propTypes";
 import PropTypes from "prop-types";
 
 export const noteCardImgPropTypes = {
@@ -29,8 +28,8 @@ export const noteEditorPropTypes = {
 };
 
 export const noteContainerPropTypes = {
-  ...containerPropTypes,
-  cards: PropTypes.arrayOf(
+  ...basePropTypes,
+  notes: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.string,
       title: PropTypes.string.isRequired,
@@ -40,6 +39,5 @@ export const noteContainerPropTypes = {
 };
 
 export const noteCardContainerPropTypes = {
-  ...basePropTypes,
-  notes: PropTypes.arrayOf(PropTypes.shape(noteCardPropTypes)),
+  ...noteContainerPropTypes,
 };
