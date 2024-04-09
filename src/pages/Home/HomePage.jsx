@@ -1,12 +1,12 @@
 import MainContainer from "@components/Containers/MainContainer";
 import NavBar from "@components/NavBar/NavBar";
-import NoteCard from "@components/NoteCard/NoteCard";
-import NoteEditor from "@components/NoteEditor/NoteEditor";
+import NoteCard from "@components/Note/NoteCard";
+import NoteEditor from "@components/Note/NoteEditor";
+import NoteContainer from "@components/Note/NoteContainer";
 import { homePagePropTypes } from "./propTypes";
 import react from "@assets/react.svg";
 
 import "./HomePage.css";
-import NoteContainer from "../../components/Containers/NoteContainer";
 
 HomePage.propTypes = homePagePropTypes;
 

@@ -9,7 +9,3 @@ export const containerPropTypes = {
 export const mainContainerPropTypes = {
   ...containerPropTypes,
 };
-
-export const noteContainerPropTypes = {
-  ...containerPropTypes,
-};
