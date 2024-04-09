@@ -29,15 +29,11 @@ export const noteEditorPropTypes = {
 
 export const noteContainerPropTypes = {
   ...basePropTypes,
-  notes: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string,
-      title: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-    }),
-  ),
 };
 
 export const noteCardContainerPropTypes = {
   ...noteContainerPropTypes,
+  notes: PropTypes.arrayOf(
+    PropTypes.shape({ ...noteCardPropTypes, id: PropTypes.number.isRequired }),
+  ),
 };
