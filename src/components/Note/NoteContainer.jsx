@@ -16,9 +16,18 @@ export default function NoteContainer() {
 
   return (
     <div className="flex-fill p-2">
-      <div>
-        <NoteCardContainer notes={notes} setSelectedNote={setSelectedNote} />
-        <NoteEditor />
+      <div className="container-fluid p-0 h-100">
+        <div className="row m-0 gx-3">
+          <NoteCardContainer
+            notes={notes}
+            setSelectedNote={setSelectedNote}
+            className="col col-sm-7 col-lg-9 ps-0"
+          />
+          <NoteEditor
+            className="col col-sm-5 col-lg-3"
+            note={notes.find((note) => note.id === selectedNote)}
+          />
+        </div>
       </div>
     </div>
   );

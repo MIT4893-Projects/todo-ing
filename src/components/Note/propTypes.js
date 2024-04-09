@@ -31,6 +31,7 @@ export const noteCardPropTypes = {
 
 export const noteEditorPropTypes = {
   ...basePropTypes,
+  note: PropTypes.shape({ ...notePropTypes }),
 };
 
 export const noteContainerPropTypes = {

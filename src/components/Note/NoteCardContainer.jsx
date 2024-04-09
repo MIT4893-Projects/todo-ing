@@ -3,9 +3,13 @@ import { noteCardContainerPropTypes } from "./propTypes";
 
 NoteCardContainer.propTypes = noteCardContainerPropTypes;
 
-export default function NoteCardContainer({ notes, setSelectedNote }) {
+export default function NoteCardContainer({
+  notes,
+  setSelectedNote,
+  className = "",
+}) {
   return (
-    <div>
+    <div className={className}>
       {notes.map((note) => (
         <NoteCard
           id={note.id}
