@@ -2,17 +2,14 @@ import { basePropTypes } from "@types/basePropTypes";
 import PropTypes from "prop-types";
 
 export const noteCardImgPropTypes = {
-  ...basePropTypes,
   image: PropTypes.string,
 };
 
 export const noteCardHeaderPropTypes = {
-  ...basePropTypes,
   header: PropTypes.string.isRequired,
 };
 
 export const noteCardBodyPropTypes = {
-  ...basePropTypes,
   content: PropTypes.string,
 };
 
@@ -25,13 +22,11 @@ export const notePropTypes = {
 
 export const noteCardPropTypes = {
   ...basePropTypes,
-  ...notePropTypes,
-  setSelectedNote: PropTypes.func.isRequired,
+  note: PropTypes.shape({ ...notePropTypes }),
 };
 
 export const noteEditorPropTypes = {
   ...basePropTypes,
-  note: PropTypes.shape({ ...notePropTypes }),
 };
 
 export const noteContainerPropTypes = {
@@ -40,5 +35,4 @@ export const noteContainerPropTypes = {
 
 export const noteCardContainerPropTypes = {
   ...noteContainerPropTypes,
-  notes: PropTypes.arrayOf(PropTypes.shape({ ...notePropTypes })),
 };
