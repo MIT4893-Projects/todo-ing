@@ -33,10 +33,10 @@ export default function NoteContainer() {
             >
               <NoteCardContainer
                 notes={notes}
-                className="col-6 col-sm-7 col-lg-9 ps-0"
+                className="col-6 col-md-9 col-lg-9 ps-0"
               />
               <NoteEditor
-                className="col-6 col-sm-5 col-lg-3"
+                className="col-6 col-md-3 col-lg-3"
                 note={selectedNote}
               />
             </SelectedNoteContext.Provider>
