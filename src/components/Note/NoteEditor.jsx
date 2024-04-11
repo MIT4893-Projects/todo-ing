@@ -14,9 +14,9 @@ NoteEditor.propTypes = noteEditorPropTypes;
 export default function NoteEditor({ className = "" }) {
   const { selectedNote } = useContext(SelectedNoteContext);
   return selectedNote ? (
-    <div className={`bg-white rounded-3 card p-0 ${className}`}>
+    <div className={`bg-white rounded-3 card p-0 h-100 ${className}`}>
       <NoteEditorImg />
-      <div className="p-4">
+      <div className="p-4 h-100 d-flex flex-column">
         <NoteEditorHeader />
         <NoteEditorBody />
       </div>

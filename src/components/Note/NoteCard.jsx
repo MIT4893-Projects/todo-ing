@@ -15,17 +15,15 @@ export default function NoteCard({ note }) {
   const { setSelectedNote } = useContext(SelectedNoteContext);
   return (
     <div
-      className="col"
+      className="card rounded-3"
       onClick={() => {
         setSelectedNote(note);
       }}
     >
-      <div className="card rounded-3">
-        <NoteCardImg image={note.image} />
-        <div className="p-4">
-          <NoteCardHeader header={note.header} />
-          <NoteCardBody content={note.content} />
-        </div>
+      <NoteCardImg image={note.image} />
+      <div className="p-4">
+        <NoteCardHeader header={note.header} />
+        <NoteCardBody content={note.content} />
       </div>
     </div>
   );

@@ -26,17 +26,17 @@ export default function NoteContainer() {
   return (
     <div className="flex-fill p-2">
       <div className="container-fluid p-0 h-100">
-        <div className="row m-0 gx-3">
+        <div className="row m-0 gx-3 h-100">
           <NoteContext.Provider value={{ notes, setNotes }}>
             <SelectedNoteContext.Provider
               value={{ selectedNote, setSelectedNote }}
             >
               <NoteCardContainer
                 notes={notes}
-                className="col col-sm-7 col-lg-9 ps-0"
+                className="col-6 col-sm-7 col-lg-9 ps-0"
               />
               <NoteEditor
-                className="col col-sm-5 col-lg-3"
+                className="col-6 col-sm-5 col-lg-3"
                 note={selectedNote}
               />
             </SelectedNoteContext.Provider>
