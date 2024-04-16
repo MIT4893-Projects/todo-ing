@@ -11,10 +11,10 @@ NoteEditor.propTypes = noteEditorPropTypes;
 
 // TODO: Implement NoteEditor
 // - Auto collapse NoteEditor when no note selected or selected note is deleted.
-export default function NoteEditor({ className = "" }) {
+export default function NoteEditor() {
   const { selectedNote } = useContext(SelectedNoteContext);
   return selectedNote ? (
-    <div className={`bg-white rounded-3 card p-0 h-100 ${className}`}>
+    <div className="bg-white rounded-3 card p-0 h-100">
       <NoteEditorImg />
       <div className="p-4 h-100 d-flex flex-column">
         <NoteEditorHeader />
