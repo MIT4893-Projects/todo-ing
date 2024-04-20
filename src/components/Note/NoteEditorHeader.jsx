@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { SelectedNoteContext } from "./context";
 
@@ -16,7 +16,7 @@ export default function NoteEditorHeader() {
     <input
       className="h3 w-100 border-0 border-bottom"
       style={{ outline: "0" }}
-      onInput={updateHeader}
+      onChange={updateHeader}
       value={selectedNote.header}
     />
   );

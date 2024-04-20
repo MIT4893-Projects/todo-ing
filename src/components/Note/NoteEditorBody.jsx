@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { SelectedNoteContext } from "./context";
 
@@ -16,8 +16,8 @@ export default function NoteEditorBody() {
     <textarea
       className="w-100 h-100 border-0"
       style={{ outline: "0", resize: "none", overflow: "auto" }}
-      onInput={updateContent}
-      value={selectedNote.content}
+      onChange={updateContent}
+      value={selectedNote.content ? selectedNote.content : ""}
     />
   );
 }

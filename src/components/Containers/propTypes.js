@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import { basePropTypes } from "@types/basePropTypes";
+import PropTypes from 'prop-types'
+import { basePropTypes } from '@types/basePropTypes'
 
 export const containerPropTypes = {
   ...basePropTypes,
-  children: PropTypes.node,
-};
+  children: PropTypes.node
+}
 
 export const mainContainerPropTypes = {
-  ...containerPropTypes,
-};
+  ...containerPropTypes
+}

@@ -1,5 +1,5 @@
-import { containerPropTypes } from "../../components/Containers/propTypes";
+import { containerPropTypes } from '../../components/Containers/propTypes'
 
 export const homePagePropTypes = {
-  ...containerPropTypes,
-};
+  ...containerPropTypes
+}

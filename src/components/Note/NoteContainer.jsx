@@ -22,13 +22,22 @@ export default function NoteContainer() {
     );
   };
 
+  const createNote = () => {
+    const newNote = noteUtils.createNote();
+    setNotes(noteUtils.getNotes());
+    setSelectedNote(newNote);
+  };
+
   useEffect(updateNotes, [selectedNote]);
+  useEffect(() => {
+    noteUtils.saveNotes(notes);
+  }, [notes]);
 
   return (
     <div className="flex-fill py-2">
       <div className="container-fluid p-0 h-100">
         <div className="row m-0 gx-2 px-1 h-100">
-          <NoteContext.Provider value={{ notes, setNotes }}>
+          <NoteContext.Provider value={{ notes, createNote }}>
             <SelectedNoteContext.Provider
               value={{ selectedNote, setSelectedNote }}
             >
@@ -37,7 +46,7 @@ export default function NoteContainer() {
                 <NoteCardContainer notes={notes} />
               </div>
               <div className="col-6 col-md-4 col-lg-3">
-                <NoteEditor note={selectedNote} />
+                <NoteEditor />
               </div>
             </SelectedNoteContext.Provider>
           </NoteContext.Provider>

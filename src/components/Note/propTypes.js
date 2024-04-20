@@ -1,38 +1,38 @@
-import { basePropTypes } from "@types/basePropTypes";
-import PropTypes from "prop-types";
+import { basePropTypes } from '@types/basePropTypes'
+import PropTypes from 'prop-types'
 
 export const noteCardImgPropTypes = {
-  image: PropTypes.string,
-};
+  image: PropTypes.string
+}
 
 export const noteCardHeaderPropTypes = {
-  header: PropTypes.string.isRequired,
-};
+  header: PropTypes.string
+}
 
 export const noteCardBodyPropTypes = {
-  content: PropTypes.string,
-};
+  content: PropTypes.string
+}
 
 export const notePropTypes = {
   id: PropTypes.number.isRequired,
   ...noteCardImgPropTypes,
   ...noteCardHeaderPropTypes,
-  ...noteCardBodyPropTypes,
-};
+  ...noteCardBodyPropTypes
+}
 
 export const noteCardPropTypes = {
   ...basePropTypes,
-  note: PropTypes.shape({ ...notePropTypes }),
-};
+  note: PropTypes.shape({ ...notePropTypes })
+}
 
 export const noteEditorPropTypes = {
-  ...basePropTypes,
-};
+  ...basePropTypes
+}
 
 export const noteContainerPropTypes = {
-  ...basePropTypes,
-};
+  ...basePropTypes
+}
 
 export const noteCardContainerPropTypes = {
-  ...noteContainerPropTypes,
-};
+  ...noteContainerPropTypes
+}
