@@ -16,7 +16,34 @@ const compat = new FlatCompat({
 });
 
 export default [
-  { languageOptions: { globals: globals.browser } },
+  {
+    files: ["src/*"],
+    ignores: ["**/*.config.js", "!**/eslint.config.js"],
+  },
+  {
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
   ...compat.extends("standard"),
-  { settings: { "import/resolver": { vite: { viteConfig: defineConfig } } } },
+  {
+    settings: {
+      "import/resolver": {
+        vite: {
+          viteConfig: defineConfig,
+        },
+      },
+    },
+  },
+  {
+    rules: {
+      "object-curly-newline": [
+        "error",
+        {
+          ObjectExpression: "always",
+          ObjectPattern: "never",
+        },
+      ],
+    },
+  },
 ];

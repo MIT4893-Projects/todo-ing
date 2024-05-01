@@ -6,6 +6,7 @@ import NoteEditorBody from "./NoteEditorBody";
 import { noteEditorPropTypes } from "./propTypes";
 
 import { SelectedNoteContext } from "./context";
+import UploadImageButton from "../Buttons/UploadImageButton";
 
 NoteEditor.propTypes = noteEditorPropTypes;
 
@@ -20,6 +21,7 @@ export default function NoteEditor() {
       <div className="p-4 h-100 d-flex flex-column">
         <NoteEditorHeader />
         <NoteEditorBody />
+        <UploadImageButton />
       </div>
     </div>
   ) : null;
