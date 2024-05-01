@@ -1,15 +1,13 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { SelectedNoteContext } from "./context";
 
 export default function NoteEditorHeader() {
-  const { selectedNote, setSelectedNote } = useContext(SelectedNoteContext);
+  const { selectedNote, updateSelectedNoteFields } =
+    useContext(SelectedNoteContext);
 
   const updateHeader = (e) => {
-    setSelectedNote({
-      ...selectedNote,
-      header: e.target.value,
-    });
+    updateSelectedNoteFields({ header: e.target.value });
   };
 
   return (

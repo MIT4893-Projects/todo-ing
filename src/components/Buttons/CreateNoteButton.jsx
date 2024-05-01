@@ -1,15 +1,10 @@
-import { useContext } from "react";
 import { FiPlus } from "react-icons/fi";
 
-import { NoteContext } from "@components/Note/context";
-
-export default function CreateNoteButton() {
-  const { createNote } = useContext(NoteContext);
-
+export default function CreateNoteButton({ onClick }) {
   return (
     <div
       className="btn btn-primary p-0 position-absolute bottom-0 end-0"
-      onClick={createNote}
+      onClick={onClick}
       style={{
         width: "40px",
         height: "40px",

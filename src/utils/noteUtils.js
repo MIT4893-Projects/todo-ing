@@ -1,7 +1,7 @@
 let notes = [
   {
     id: 1,
-    image: "https://placebear.com/g/200/200",
+    image: 'https://placebear.com/g/200/200',
     header: 'Note 1',
     content: 'Content 1'
   },
@@ -25,8 +25,10 @@ export function saveNotes (newNotes) {
 }
 
 export function createNote () {
-  const newNote = { id: notes.length + 1, header: 'New Note' }
+  const newNote = {
+    id: notes.length + 1, header: 'New Note'
+  }
 
   saveNotes([...notes, newNote])
-  return newNote;
+  return newNote
 }

@@ -22,7 +22,9 @@ export const notePropTypes = {
 
 export const noteCardPropTypes = {
   ...basePropTypes,
-  note: PropTypes.shape({ ...notePropTypes })
+  note: PropTypes.shape({
+    ...notePropTypes
+  })
 }
 
 export const noteEditorPropTypes = {
