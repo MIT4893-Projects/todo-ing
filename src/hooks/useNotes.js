@@ -1,37 +1,39 @@
 import { useState } from 'react'
+import { useLiveQuery } from 'dexie-react-hooks'
+
+import { db } from '@utils/db'
 
 function useNotes () {
-  const [notes, setNotes] = useState([])
-  const [selectedNote, setSelectedNote] = useState(null)
+  const dbTable = db.notes
 
-  const createNotes = () => {
-    const newNotes = {
+  const [selectedNote, setSelectedNote] = useState(null)
+  const notes = useLiveQuery(() => dbTable.toArray(), [selectedNote])
+
+  const createNotes = async () => {
+    const newNote = {
       id: notes.length + 1,
       image: '',
       header: '',
       content: ''
     }
-    setNotes([...notes, newNotes])
-    setSelectedNote(newNotes)
+
+    await dbTable.put(newNote)
+    setSelectedNote(newNote)
   }
 
-  const updateSelectedNoteFields = (updatedFields) => {
+  const updateSelectedNoteFields = async (updatedFields) => {
     const updatedNote = {
       id: selectedNote.id,
       ...selectedNote,
       ...updatedFields
     }
 
+    await dbTable.put(updatedNote)
     setSelectedNote(updatedNote)
-
-    setNotes((notes) =>
-      notes.map((note) => (note.id !== selectedNote.id ? note : updatedNote))
-    )
   }
 
   return {
     notes,
-    setNotes,
     createNotes,
     selectedNote,
     setSelectedNote,

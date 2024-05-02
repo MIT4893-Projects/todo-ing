@@ -1,7 +1,3 @@
-import { useEffect } from "react";
-
-import * as noteUtils from "@utils/noteUtils";
-
 import NoteEditor from "./NoteEditor";
 import NoteCardContainer from "./NoteCardContainer";
 import CreateNoteButton from "../Buttons/CreateNoteButton";
@@ -15,14 +11,11 @@ NoteContainer.propTypes = noteContainerPropTypes;
 export default function NoteContainer() {
   const {
     notes,
-    setNotes,
     createNotes,
     selectedNote,
     setSelectedNote,
     updateSelectedNoteFields,
   } = useNotes();
-
-  useEffect(() => setNotes(noteUtils.getNotes()), []);
 
   return (
     <div className="flex-fill py-2">
