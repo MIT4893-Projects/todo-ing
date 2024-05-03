@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useLiveQuery } from 'dexie-react-hooks'
 
+import { pickImageFile } from '@utils/pickFileUtil'
+
 import { db } from '@utils/db'
 
 function useNotes () {
@@ -32,12 +34,27 @@ function useNotes () {
     setSelectedNote(updatedNote)
   }
 
+  const updateSelectedNoteImage = async () => {
+    let imageFile
+
+    try {
+      imageFile = await pickImageFile()
+    } catch (error) {
+      if (error instanceof DOMException) return
+    }
+
+    updateSelectedNoteFields({
+      image: imageFile
+    })
+  }
+
   return {
     notes,
     createNotes,
     selectedNote,
     setSelectedNote,
-    updateSelectedNoteFields
+    updateSelectedNoteFields,
+    updateSelectedNoteImage
   }
 }
 

@@ -15,6 +15,7 @@ export default function NoteContainer() {
     selectedNote,
     setSelectedNote,
     updateSelectedNoteFields,
+    updateSelectedNoteImage,
   } = useNotes();
 
   return (
@@ -22,7 +23,12 @@ export default function NoteContainer() {
       <div className="container-fluid p-0 h-100">
         <div className="row m-0 gx-2 px-1 h-100">
           <SelectedNoteContext.Provider
-            value={{ selectedNote, setSelectedNote, updateSelectedNoteFields }}
+            value={{
+              selectedNote,
+              setSelectedNote,
+              updateSelectedNoteFields,
+              updateSelectedNoteImage,
+            }}
           >
             <div className="col-6 col-md-8 col-lg-9 position-relative">
               <CreateNoteButton onClick={createNotes} />

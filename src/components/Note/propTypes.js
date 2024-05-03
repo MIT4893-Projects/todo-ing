@@ -2,7 +2,7 @@ import { basePropTypes } from '@types/basePropTypes'
 import PropTypes from 'prop-types'
 
 export const noteCardImgPropTypes = {
-  image: PropTypes.string
+  image: PropTypes.object
 }
 
 export const noteCardHeaderPropTypes = {

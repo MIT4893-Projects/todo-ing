@@ -8,7 +8,7 @@ export default function NoteEditorImg() {
     <div
       style={{
         height: "200px",
-        backgroundImage: `url(${selectedNote.image})`,
+        backgroundImage: `url(${URL.createObjectURL(selectedNote.image)})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

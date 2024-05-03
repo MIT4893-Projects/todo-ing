@@ -7,7 +7,7 @@ export default function NoteCardImg({ image }) {
     <div
       style={{
         height: "200px",
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${URL.createObjectURL(image)})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",

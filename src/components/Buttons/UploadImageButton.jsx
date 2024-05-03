@@ -1,11 +1,11 @@
-import { pickImageFile } from "@utils/pickFileUtil";
+import { useContext } from "react";
+import { SelectedNoteContext } from "../Note/context";
 
 export default function UploadImageButton() {
+  const { updateSelectedNoteImage } = useContext(SelectedNoteContext);
+
   return (
-    <button
-      className="btn"
-      onClick={async () => console.log(await pickImageFile())}
-    >
+    <button className="btn" onClick={updateSelectedNoteImage}>
       Upload Image
     </button>
   );
